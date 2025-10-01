@@ -1,0 +1,33 @@
+# Site settings
+title: "TLS Data Processing Tutorial"
+description: "Step-by-step tutorial for TLS data processing"
+baseurl: "" # leave empty for GitHub Pages
+url: "https://Arunima-singh27.github.io" # replace with your GitHub username
+theme: "just-the-docs"
+
+# Sidebar navigation
+nav:
+  - Home: index.md
+- Steps:
+  - 1. Co-registration - GeoSysManager: 1.co-registration-GeoSysManager.md
+- 2. Co-registration - Project Import and Georeferencing: 2.co-registration-project_import_and_georeferencing.md
+- 3. Co-registration - Automatic Registration: 3.co-registration-automatic_registration2.md
+- 4. Co-registration - Multi-Station Adjustment: 4.co-registration-multi_station_adjustment.md
+- 5. Co-registration - Quality Control: 5.co-registration-quality_control.md
+- 6. Co-registration - Backup and Export: 6.co-registration-backup_export.md
+- 7. Clipping: 7.clipping.md
+- 8. Segmentation - RayCloudTools: 8.Segmentation-raycloudtools.md
+- 9. Segmentation - Part 1: 9.Segmentation-part1.md
+- 10. Segmentation - Part 2: 10.Segmentation-part2.md
+- 11. Itsme - Tree Metrics: 11.Itsme-tree-metrics.md
+- 12. Leaf-Wood Separation: 12.leaf-wood-separation.md
+- People: people.md
+- Materials: materials.md
+- Download Workshop Materials: download.md
+- Requirements: requirements.md
+- Workshop Schedule: schedule.md
+- Resources: resources.md
+
+# Include custom CSS
+sass:
+  style: css/style.css
