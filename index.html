@@ -1,10 +1,63 @@
-<h2>Tutorial Steps</h2>
-  <ul>
-    <li><a href="1.GeoSysManager.html">1. Co-registration</a></li>
-    <li><a href="2.project_import_and_georeferencing.html">2. Clipping</a></li>
-    <li><a href="3.automatic_registration2.html">3. Segmentation</a></li>
-    <li><a href="4.multi_station_adjustment.html">4. Tree Metrics</a></li>
-    <li><a href="5.quality_control.html">4. Tree Metrics</a></li>
-    <li><a href="6.backup_export.html">4. Tree Metrics</a></li>
-  </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TLS Data Processing Pipeline Tutorial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <header>
+    <h1>TLS Data Processing Pipeline Tutorial</h1>
+    <p>
+      This tutorial provides a complete workflow for terrestrial laser scanning (TLS) data, 
+      from scan registration to tree volume estimation. Each section includes detailed 
+      steps, code examples, and outputs.
+    </p>
+  </header>
+
+  <section>
+    <h2>Workflow Overview</h2>
+    <p>The TLS processing workflow is organized into 12 steps:</p>
+    <img src="images/workflow.png" alt="Workflow diagram" width="70%">
+  </section>
+
+  <section>
+    <h2>Tutorial Steps</h2>
+    <ol>
+      <li><a href="1.GeoSysManager.html">Co-registration: GeoSys Manager</a></li>
+      <li><a href="2.project_import_and_georeferencing.html">Co-registration: Project Import & Georeferencing</a></li>
+      <li><a href="3.automatic_registration2.html">Co-registration: Automatic Registration</a></li>
+      <li><a href="4.multi_station_adjustment.html">Co-registration: Multi-station Adjustment</a></li>
+      <li><a href="5.quality_control.html">Co-registration: Quality Control</a></li>
+      <li><a href="6.backup_export.html">Co-registration: Backup & Export</a></li>
+      <li><a href="clipping.html">Clipping</a> – Extract smaller plots from the TLS point clouds.</li>
+      <li><a href="Raycloudtools using Docker.html">Segmentation (RayCloudTools)</a></li>
+      <li><a href="1.Segmentation_correction_propagation.html">Segmentation – Part 1</a></li>
+      <li><a href="2.Segmentation_correction_prep.html">Segmentation – Part 2</a></li>
+      <li><a href="3.segmentation.html">Segmentation – Part 3</a></li>
+      <li><a href="Tree_structural_metrics_cal.html">Tree Metrics</a> – DBH, height, crown volume, crown projection area.</li>
+      <li><a href="12.leaf-wood-segmentation.html">Leaf–Wood Separation</a></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Resources</h2>
+    <ul>
+      <li><a href="https://cran.r-project.org/web/packages/lidR/">lidR R package</a></li>
+      <li><a href="https://rapidlasso.com/lastools/">LAStools</a></li>
+      <li><a href="https://github.com/r-lidar">R-lidar community</a></li>
+      <li><a href="https://www.rstudio.com/">RStudio</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>
+      Created by [Your Name], [Your Institution] <br>
+      Hosted on GitHub Pages
+    </p>
+  </footer>
+
+</body>
+</html>
