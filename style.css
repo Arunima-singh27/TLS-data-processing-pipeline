@@ -45,3 +45,15 @@ footer {
   padding: 10px;
   border-top: 1px solid #ddd;
 }
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* space between logos */
+  margin: 20px 0;
+}
+
+.logo {
+  max-height: 80px;  /* adjust size */
+  width: auto;
+}
