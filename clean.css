@@ -1,0 +1,35 @@
+/* Clean Markdown-like style for selected pages */
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background-color: #fafafa;
+  color: #222;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: gray;
+  margin-top: 3em;
+}
+
+a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
