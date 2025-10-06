@@ -1628,8 +1628,9 @@ Windows.</p>
      docker image:</li>
 </ol>
 
-<p class=MsoNormal style='text-align:justify;text-indent:.5in'><i>docker pull
-ghcr.io/<span class=SpellE>csiro</span>-robotics/<span class=SpellE>raycloudtools:latest</span><o:p></o:p></i></p>
+<div class="docker-commands">
+  <pre><code>docker pull ghcr.io/csiro-robotics/raycloudtools:latest</code></pre>
+</div>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in'><span
 style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
@@ -1673,11 +1674,11 @@ style='mso-bidi-font-family:Aptos;mso-bidi-theme-font:minor-latin'><span
 style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]>Run the container:</p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-align:justify'><i>docker run
--it --rm --name <span class=SpellE>raycloudtools</span> -v /path/to/<span
-class=SpellE>datafolder_locally</span>:/path/to/<span class=SpellE>datafolder_container</span>
-ghcr.io/<span class=SpellE>csiro</span>-robotics/<span class=SpellE>raycloudtools:latest</span>
-/bin/bash<o:p></o:p></i></p>
+<div class="docker-commands">
+  <pre><code>docker run -it --rm --name raycloudtools \
+  -v /path/to/datafolder_locally:/path/to/datafolder_container \
+  ghcr.io/csiro-robotics/raycloudtools:latest /bin/bash</code></pre>
+</div>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'><span
 style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="_x0000_i1034" type="#_x0000_t75"
@@ -1693,9 +1694,9 @@ v:shapes="_x0000_i1034"><![endif]></span></p>
 
 <p class=MsoNormal style='text-align:justify'><b>to mount your data folder:<o:p></o:p></b></p>
 
-<p class=MsoNormal style='text-align:justify'><i>docker run -it -v
-E:/data_raycloud:/data -p 8080:8080 <span class=SpellE>raycloudtools</span>
-bash<o:p></o:p></i></p>
+<div class="docker-commands">
+  <pre><code>docker run -it -v E:/data_raycloud:/data -p 8080:8080 raycloudtools bash</code></pre>
+</div>
 
 <p class=MsoNormal style='text-align:justify'><span style='color:#EE0000'>note-&gt;
 it should start a new container with different ID, so use that ID next time to
@@ -1769,10 +1770,10 @@ fields to your input file:</p>
 
 <p class=MsoNormal style='text-align:justify'><b>Import your dataset:<o:p></o:p></b></p>
 
-<p class=MsoNormal style='text-align:justify'><span class=SpellE><i>rayimport</i></span><i>
-/data/<span class=SpellE>point_cloud.ply</span> ray 0,0,-1 --<span
-class=SpellE>max_intensity</span> 0 --<span class=SpellE>remove_start_pos</span><o:p></o:p></i></p>
-
+<div class="docker-commands">
+  <pre><code>rayimport /data/point_cloud.ply ray 0,0,-1 --max_intensity 0 --remove_start_pos</code></pre>
+</div>
+	
 <p class=MsoNormal style='text-align:justify'><i style='mso-bidi-font-style:
 normal'><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_6"
  o:spid="_x0000_i1030" type="#_x0000_t75" style='width:468.6pt;height:57pt;
@@ -1801,8 +1802,9 @@ class=SpellE>your_pointcloud_raycloud.ply</span>&nbsp;in the same directory.</p>
 <p class=MsoNormal style='text-align:justify'>The first step is to extract the
 terrain mesh from the <span class=SpellE>pointcloud</span>:</p>
 
-<p class=MsoNormal style='text-align:justify'><span class=SpellE><i>rayextract</i></span><i>
-terrain <span class=SpellE>your_pointcloud_raycloud.ply</span><o:p></o:p></i></p>
+<div class="docker-commands">
+  <pre><code>rayextract terrain your_pointcloud_raycloud.ply</code></pre>
+</div>
 
 <p class=MsoNormal style='text-align:justify'><i style='mso-bidi-font-style:
 normal'><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_7"
@@ -1830,9 +1832,9 @@ shortest path graph through all the tree points, using some heuristics to guide
 the connectivity. Hence, it combines the tree instance segmentation step and
 the cylinder fitting (i.e., QSM) building step.</p>
 
-<p class=MsoNormal style='text-align:justify'><span class=SpellE><i>rayextract</i></span><i>
-trees <span class=SpellE>your_pointcloud_raycloud.ply</span> <span
-class=SpellE>your_pointcloud_raycloud_mesh.ply</span><o:p></o:p></i></p>
+<div class="docker-commands">
+  <pre><code>rayextract trees your_pointcloud_raycloud.ply your_pointcloud_raycloud_mesh.ply</code></pre>
+</div>
 
 <p class=MsoNormal style='text-align:justify'><i style='mso-bidi-font-style:
 normal'><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_8"
@@ -1901,9 +1903,9 @@ v:shapes="Picture_x0020_1"><![endif]></span></p>
 <p class=MsoNormal style='text-align:justify'>Or, you can import it to the
 workspace using <span class=SpellE>cmd</span>:</p>
 
-<p class=MsoNormal style='text-align:justify'><i>docker cp
-C:\docker_workspace\myfiles <span class=SpellE>container_name</span>:/workspace/<span
-class=SpellE>myfiles</span><o:p></o:p></i></p>
+<div class="docker-commands">
+  <pre><code>docker cp C:\docker_workspace\myfiles container_name:/workspace/myfiles</code></pre>
+</div>
 
 <p class=MsoNormal style='text-align:justify'><span style='color:#EE0000'>Note-&gt;
 Use the mounted local folder for this, as Docker cannot access the drives
@@ -1975,13 +1977,18 @@ filter the trees from non-trees after the segmentation. <span style='color:
 <p class=MsoNormal style='text-align:justify'><b>Additional information:<o:p></o:p></b></p>
 
 <p class=MsoNormal style='text-align:justify'>to copy data from docker
-container to local host folder: C:\Users\arusingh&gt;docker cp
-0270a3038c84:/workspace/<span class=SpellE>gridfiles_mesh</span>
-&quot;F:\KA_Budca\clouds\test\riegl_sample\output&quot;</p>
-
+container to local host folder
+</p>
+<div class="docker-commands">
+  <pre><code>docker cp 0270a3038c84:/workspace/gridfiles_mesh "F:\KA_Budca\clouds\test\riegl_sample\output"</code></pre>
+</div>
+	
 <p class=MsoNormal style='text-align:justify'>to copy a file in a folder of
-docker container: docker cp F:\BCI\rayextract_trees_large.sh
-8c8eeee6e7c7:/data/workspace/ForestGeo2025</p>
+docker container: docker cp
+</p>
+<div class="docker-commands">
+  <pre><code>docker cp F:\BCI\rayextract_trees_large.sh 8c8eeee6e7c7:/data/workspace/ForestGeo2025</code></pre>
+</div>
 
 <p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
 
