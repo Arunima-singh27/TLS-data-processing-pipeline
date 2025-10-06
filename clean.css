@@ -33,3 +33,17 @@ a {
 a:hover {
   text-decoration: underline;
 }
+/* Docker/ray command blocks */
+.docker-commands pre {
+  background-color: #f6f8fa; /* light gray background */
+  padding: 12px;             /* spacing inside the block */
+  border-radius: 6px;        /* rounded corners */
+  overflow-x: auto;          /* horizontal scroll if line too long */
+  font-family: monospace;    /* terminal-like font */
+  font-size: 0.95em;         /* slightly smaller font */
+  line-height: 1.5;          /* readable spacing */
+}
+
+.docker-commands code {
+  color: #24292e;            /* dark text like GitHub */
+}
