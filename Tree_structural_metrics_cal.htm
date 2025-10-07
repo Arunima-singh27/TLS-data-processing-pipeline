@@ -114,14 +114,12 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'><b># Read the
 point cloud file from the specified path to the tree point cloud file</b></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-indent:.5in'>pc_tree
-&lt;- read_tree_pc(path = &quot;path/to/point/cloud.txt&quot;)</p>
+<pre><code>pc_tree <- read_tree_pc(path = "path/to/point/cloud.txt")</code></pre>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-indent:.5in'>#
 Use dbh_pc function with default parameters and plot the fit</p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-indent:.5in'>out_dbh
-&lt;- dbh_pc(pc = pc_tree, plot = TRUE)</p>
+<pre><code>out_dbh <- dbh_pc(pc = pc_tree, plot = TRUE)</code></pre>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-indent:.5in'><img
 border=0 width=613 height=340
@@ -136,8 +134,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
 <p class=MsoNormal style='margin-left:1.0in;text-align:justify'># Use dbh_pc
 function with default parameters and plot the fit</p>
 
-<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-indent:.5in'>out_dbh
-&lt;- dab_pc (pc = pc_tree, plot = TRUE)</p>
+<pre><code>out_dbh <- dab_pc (pc = pc_tree, plot = TRUE)</code></pre>
 
 <p class=MsoNormal style='margin-left:.5in;text-align:justify;text-indent:.5in'><img
 border=0 width=347 height=271 id="Google Shape;282;g13cb51f42dc_0_68"
@@ -148,8 +145,7 @@ alt="A diagram of a bird&#10;&#10;AI-generated content may be incorrect."></p>
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b><b>Tree
 height</b></p>
 
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;text-align:justify'>Tree_height&lt;-tree_height_pc(pc
-= pc_tree, plot = TRUE)</p>
+<pre><code>Tree_height <- tree_height_pc(pc= pc_tree, plot = TRUE)</code></pre>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;text-align:justify'><img
 border=0 width=552 height=207 id="Google Shape;231;g13cb51f42dc_0_3"
@@ -165,10 +161,9 @@ for crown metrics</p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;text-align:justify'>Crown
 points = all points of the tree except for the stem points below the first
-branch</p>
+branch; thresholdbranch (1->5, this will determine when the first branch will reach), minheight (this will give a exact estimation where should you first branch be, you can check this in the plot as well)</p>
 
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;text-align:justify'>Classify_crown&lt;-classify_crown_pc(pc
-= pc_tree, plot = TRUE)</p>
+<pre><code>Classify_crown<-classify_crown_pc(pc = pc_tree, thresholdbranch = 5,minheight = 10.26,plot = TRUE)</code></pre>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;text-align:justify'><img
 border=0 width=490 height=374 id="Google Shape;339;g13cb51f42dc_0_150"
@@ -209,8 +204,7 @@ text-indent:-1.5in'><b><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&n
 </span></b><b>From point cloud: volume of the alpha shape fitted to the crown
 points</b></p>
 
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;text-align:justify'>Crown_volume
-&lt;- alpha_volume_pc(pc = pc_tree, plot = TRUE)</p>
+<pre><code>Crown_volume <- alpha_volume_pc(pc = crown_pc$crownpoints, alpha = 1, plot =TRUE)</code></pre>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;text-align:justify'><img
 border=0 width=218 height=404 id="Google Shape;407;g13cf84639ef_0_77"
@@ -227,14 +221,7 @@ summary data.frame with the basic structural metrics (tree position, dbh, dab,
 tree height, projected area, 3D alpha volume) that can be obtained from
 individual tree point clouds for all point clouds in a specific folder:</p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-align:justify'>basic_summary
-&lt;- summary_basic_pointcloud_metrics(</p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-align:justify'>  PCs_path =
-&quot;path/to/point/cloud/folder/&quot;,</p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-align:justify'>  OUT_path =
-&quot;path/to/output/folder/&quot;)</p>
+<pre><code>basic_summary<- summary_basic_pointcloud_metrics(PCs_path="path/to/point/cloud/folder/", OUT_path <- "path/to/output/folder/")</code></pre>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'>&nbsp;</p>
 
@@ -256,7 +243,7 @@ href="https://cloudcompare.org/index.html">cloudcompare</a>, you should
 download the indicated one in the picture below:</p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'><img border=0
-width=1534 height=688 src="Tree_structural_metrics_cal_files/image009.png"
+width=600 height=auto src="Tree_structural_metrics_cal_files/image009.png"
 alt="A screenshot of a computer&#10;&#10;AI-generated content may be incorrect."></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'>&nbsp;</p>
@@ -266,7 +253,7 @@ follow the installer instructions, you need to check the 3DFin plugin while
 installation of the software.</p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'><img border=0
-width=462 height=382 src="Tree_structural_metrics_cal_files/image010.png"
+width=300 height=auto src="Tree_structural_metrics_cal_files/image010.png"
 alt="A screenshot of a computer program&#10;&#10;AI-generated content may be incorrect."></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'>&nbsp;</p>
@@ -284,7 +271,7 @@ in the figure below:</p>
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'>&nbsp;</p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'><img border=0
-width=1534 height=813 src="Tree_structural_metrics_cal_files/image011.png"
+width=600 height=auto src="Tree_structural_metrics_cal_files/image011.png"
 alt="A screenshot of a computer&#10;&#10;AI-generated content may be incorrect."></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'>&nbsp;</p>
@@ -302,7 +289,7 @@ Run.</p>
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'>&nbsp;</p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'><img border=0
-width=1534 height=812 src="Tree_structural_metrics_cal_files/image012.png"
+width=600 height=auto src="Tree_structural_metrics_cal_files/image012.png"
 alt="A screenshot of a computer&#10;&#10;AI-generated content may be incorrect."></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'><b>&nbsp;</b></p>
