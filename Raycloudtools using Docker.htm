@@ -1937,6 +1937,32 @@ segmented tree point cloud (for individual trees this is normally just the
 whole point cloud), (4) Tree QSM files as treefile.txt, (5) Tree QSM as mesh
 (.ply) file</p>
 
+<p class=MsoNormal style='text-align:justify'><b>Visualization of QSM:<o:p></o:p></b></p>
+
+<h3>R Visualization Instructions</h3>
+<pre style="font-family: monospace; background-color:#f7f7f7; padding:15px; border-radius:8px; overflow-x:auto;">
+For visualization purpose, use treefile.txt in Tree QSM files folder and run the command below:
+if(!require(rgl)) install.packages("rgl"); library(rgl)
+library(rgl)
+# ---- Load RayExtract QSM file ----
+f <- "C:/Users/arusingh/Downloads/BCI_plot1_subplotB0.01cm_raycloud_segmented_177_raycloud_trees.txt"
+x <- readLines(f)
+d <- as.numeric(trimws(unlist(strsplit(x[length(x)], ","))))
+d <- matrix(d[!is.na(d)], ncol=6, byrow=TRUE)
+colnames(d) <- c("x","y","z","radius","parent_id","section_id")
+d <- as.data.frame(d)
+
+# ---- 3D visualization ----
+open3d()
+for(i in 1:nrow(d)){
+  p <- d$parent_id[i]
+  if(p >= 0) segments3d(rbind(d[i,1:3], d[p+1,1:3]), col="forestgreen", lwd=3)
+}
+axes3d()
+title3d("X","Y","Z")
+</pre>
+
+
 <p class=MsoNormal style='text-align:justify'><b>Working with large point
 clouds:<o:p></o:p></b></p>
 
