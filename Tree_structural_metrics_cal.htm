@@ -97,11 +97,9 @@ Terryn</p>
 version of&nbsp;ITSMe&nbsp;from&nbsp;<a href="https://github.com/lmterryn/ITSMe">ITSMe</a>
 in R-Studio:</p>
 
-<p class=MsoNormal style='text-align:justify'><i>#
-install.packages(&quot;devtools&quot;)</i></p>
+ <pre><code>install.packages(devtools)</code></pre>
 
-<p class=MsoNormal style='text-align:justify'><i>devtools::install_github(&quot;lmterryn/ITSMe&quot;,
-build_vignettes = TRUE)</i></p>
+ <pre><code>devtools::install_github("lmterryn/ITSMe",build_vignettes = TRUE)</code></pre>
 
 <p class=MsoNormal style='text-align:justify'><b>The tree metrics focused here
 are DBH (Diameter at breast height), DBH (above buttress), crown volume, and
@@ -119,7 +117,7 @@ point cloud file from the specified path to the tree point cloud file</b></p>
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-indent:.5in'>#
 Use dbh_pc function with default parameters and plot the fit</p>
 
-<pre><code>out_dbh <- dbh_pc(pc = pc_tree, plot = TRUE)</code></pre>
+ <pre><code>out_dbh <- dbh_pc(pc = pc_tree, plot = TRUE)</code></pre>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-indent:.5in'><img
 border=0 width=613 height=340
@@ -134,7 +132,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
 <p class=MsoNormal style='margin-left:1.0in;text-align:justify'># Use dbh_pc
 function with default parameters and plot the fit</p>
 
-<pre><code>out_dbh <- dab_pc (pc = pc_tree, plot = TRUE)</code></pre>
+ <pre><code>out_dbh <- dab_pc (pc = pc_tree, plot = TRUE)</code></pre>
 
 <p class=MsoNormal style='margin-left:.5in;text-align:justify;text-indent:.5in'><img
 border=0 width=347 height=271 id="Google Shape;282;g13cb51f42dc_0_68"
@@ -145,7 +143,7 @@ alt="A diagram of a bird&#10;&#10;AI-generated content may be incorrect."></p>
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b><b>Tree
 height</b></p>
 
-<pre><code>Tree_height <- tree_height_pc(pc= pc_tree, plot = TRUE)</code></pre>
+ <pre><code>Tree_height <- tree_height_pc(pc= pc_tree, plot = TRUE)</code></pre>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;text-align:justify'><img
 border=0 width=552 height=207 id="Google Shape;231;g13cb51f42dc_0_3"
@@ -163,7 +161,7 @@ for crown metrics</p>
 points = all points of the tree except for the stem points below the first
 branch; thresholdbranch (1->5, this will determine when the first branch will reach), minheight (this will give a exact estimation where should you first branch be, you can check this in the plot as well)</p>
 
-<pre><code>Classify_crown<-classify_crown_pc(pc = pc_tree, thresholdbranch = 5,minheight = 10.26,plot = TRUE)</code></pre>
+ <pre><code>Classify_crown<-classify_crown_pc(pc = pc_tree, thresholdbranch = 5,minheight = 10.26,plot = TRUE)</code></pre>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;text-align:justify'><img
 border=0 width=490 height=374 id="Google Shape;339;g13cb51f42dc_0_150"
@@ -186,8 +184,7 @@ area of the vertical projection of the tree crown</p>
 point cloud: area of the concave hull fitted to the XY coordinates of the crown
 points</p>
 
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;text-align:justify'>Projected_area
-&lt;- projected_area_pc(pc = pc_tree, plot = TRUE)</p>
+ <pre><code>Projected_area<-projected_area_pc(pc = pc_tree, plot = TRUE)</code></pre>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;text-align:justify'><img
 border=0 width=315 height=241 id="Google Shape;379;g13cf84639ef_0_44"
@@ -204,7 +201,7 @@ text-indent:-1.5in'><b><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&n
 </span></b><b>From point cloud: volume of the alpha shape fitted to the crown
 points</b></p>
 
-<pre><code>Crown_volume <- alpha_volume_pc(pc = crown_pc$crownpoints, alpha = 1, plot =TRUE)</code></pre>
+ <pre><code>Crown_volume <- alpha_volume_pc(pc = crown_pc$crownpoints, alpha = 1, plot =TRUE)</code></pre>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;text-align:justify'><img
 border=0 width=218 height=404 id="Google Shape;407;g13cf84639ef_0_77"
@@ -221,7 +218,7 @@ summary data.frame with the basic structural metrics (tree position, dbh, dab,
 tree height, projected area, 3D alpha volume) that can be obtained from
 individual tree point clouds for all point clouds in a specific folder:</p>
 
-<pre><code>basic_summary<- summary_basic_pointcloud_metrics(PCs_path="path/to/point/cloud/folder/", OUT_path <- "path/to/output/folder/")</code></pre>
+ <pre><code>basic_summary<- summary_basic_pointcloud_metrics(PCs_path="path/to/point/cloud/folder/", OUT_path <- "path/to/output/folder/")</code></pre>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'>&nbsp;</p>
 
