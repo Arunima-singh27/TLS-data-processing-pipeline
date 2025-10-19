@@ -1675,9 +1675,7 @@ style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp
 </span></span></span><![endif]>Run the container:</p>
 
 <div class="docker-commands">
-  <pre><code>docker run -it --rm --name raycloudtools \
-  -v /path/to/datafolder_locally:/path/to/datafolder_container \
-  ghcr.io/csiro-robotics/raycloudtools:latest /bin/bash</code></pre>
+  <pre><code>docker run -it --rm --name raycloudtools -v C:/:/workspace ghcr.io/csiro-robotics/raycloudtools:latest /bin/bash</code></pre>
 </div>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'><span
@@ -1695,7 +1693,7 @@ v:shapes="_x0000_i1034"><![endif]></span></p>
 <p class=MsoNormal style='text-align:justify'><b>to mount your data folder:<o:p></o:p></b></p>
 
 <div class="docker-commands">
-  <pre><code>docker run -it -v E:/data_raycloud:/data -p 8080:8080 raycloudtools bash</code></pre>
+  <pre><code>docker run -it -v C:/:/workspace raycloudtools bash</code></pre>
 </div>
 
 <p style="font-family: Arial, sans-serif; background-color:#fff4e6; padding:10px; border-left:4px solid #ff4500; border-radius:6px;">
